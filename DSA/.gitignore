@@ -1,0 +1,41 @@
+# Ignore bin directory
+/bin/
+
+# Ignore lib directory if it contains generated or third-party libraries
+/lib/
+
+# Ignore VS Code specific settings
+.vscode/
+
+# Ignore log files
+*.log
+
+# Ignore compiled class files
+*.class
+
+# Ignore package files
+*.jar
+*.war
+*.ear
+
+# Ignore Maven or Gradle specific files
+target/
+out/
+
+# Ignore IntelliJ IDEA specific files
+.idea/
+*.iml
+
+# Ignore Eclipse specific files
+.project
+.classpath
+.settings/
+
+# Ignore temporary files
+*.tmp
+*.swp
+*~
+
+# Ignore operating system files
+.DS_Store
+Thumbs.db
