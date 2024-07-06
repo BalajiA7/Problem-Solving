@@ -35,6 +35,31 @@ public class MorrisTraversal {
         return inOrder;
     }
 
+    public static List<Integer> morrisTraversalpreOrder(Node root) {
+        List<Integer> preOrder = new ArrayList<>();
+        if (root == null)
+            return preOrder;
+        Node curr = root;
+        while (curr != null) {
+            if (curr.left != null) {
+                Node rightMost = rightMost(curr.left, curr);
+                if (rightMost.right == null) {
+                    preOrder.add(curr.value);
+                    rightMost.right = curr;
+                    curr = curr.left;
+                } else {
+                    rightMost.right = null;
+                    curr = curr.right;
+                }
+            } else {
+                preOrder.add(curr.value);
+                curr = curr.right;
+            }
+
+        }
+        return preOrder;
+    }
+
     public static Node rightMost(Node root, Node curr) {
         while (root.right != null && root.right != curr) {
             root = root.right;
@@ -55,6 +80,6 @@ public class MorrisTraversal {
         root.left = lNode;
         root.right = rNode;
 
-        System.out.println(morrisTraversalInOrder(root));
+        System.out.println(morrisTraversalpreOrder(root));
     }
 }
